@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos ChartJs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Grafico de linha fica dentro dessa tag -->
+        <canvas id="GraficoLinha"></canvas>
+    </div>
+    <div class="container">
+        <!-- Grafico de barra fica dentro dessa tag -->
+        <canvas id="GraficoBarra"></canvas>
+    </div>
+</body>
+
+<script>
+
+    const grafico = document.getElementById('GraficoLinha');
+    const lineChart = new Chart(grafico, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'temperatura', 
+          data: [30, 29, 28, 25, 22, 23],
+          borderColor: "#FF6384",
+          backgroundColor: "#FF6384"
+        },
+         {
+          label: 'umidade', 
+          data: [80, 82, 80, 85, 80, 83],
+          borderColor: "#36A2EB",
+          backgroundColor: "#36A2EB"
+        }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const grafico2 = document.getElementById('GraficoBarra');
+    const barChart = new Chart(grafico2, {
+        type: 'bar',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [
+                {
+                    label: 'Temperatura',
+                    data: [30, 29, 28, 25, 22, 23],
+                    borderColor: "#FF6384",
+                    backgroundColor: "#FF6384",
+                },
+                {
+                    label: 'Umidade',
+                    data: [80, 82, 80, 85, 80, 83],
+                    borderColor: "#36A2EB",
+                    backgroundColor: "#36A2EB",
+                }
+            ]
+        },
+        options: {},
+    });
+</script>
+
+</html>
